@@ -1,0 +1,163 @@
+{
+    "section1":{
+        "id":"section-1",
+        "name":"section 1",
+        "username":{
+            "id":"uname",
+            "action":"enter",
+            "name":"Username",
+            "details":""
+        },
+        "email":{
+            "id":"email",
+            "action":"enter",
+            "name":"Email",
+            "details":""
+        },
+        "password":{
+            "id":"pass",
+            "action":"enter",
+            "name":"Password",
+            "details":""
+        },
+        "cpassword":{
+            "id":"cpass",
+            "action":"enter",
+            "name":"Confirm password",
+            "details":""
+        },
+        "next":{
+            "partialtext":"^Next.*$",
+            "action":"click",
+            "name":"next button",
+            "element_type":"button"
+        }
+    },
+    "section2":{
+        "id":"section-2",
+        "name":"section 2",
+        "fname":{
+            "id":"fname",
+            "action":"enter",
+            "name":"first name",
+            "details":""
+        },
+        "lname":{
+            "id":"lname",
+            "action":"enter",
+            "name":"last name",
+            "details":""
+        },
+        "gender":{
+            "id":"gender",
+            "action":"select",
+            "name":"gender",
+            "details":""
+        },
+        "dob":{
+            "id":"birthdate",
+            "action":"enter",
+            "name":"date of birth",
+            "details":""
+        },
+        "address":{
+            "id":"address",
+            "action":"enter",
+            "name":"address",
+            "details":""
+        },
+        "phone":{
+            "id":"phone",
+            "action":"enter",
+            "name":"phone",
+            "details":""
+        },
+        "preferedcontact1":{
+            "id":"preferedcontact1",
+            "name":"Preferred contact",
+            "action":"click"
+        },
+        "profilepic":{
+            "id":"attachedFile",
+            "action":"enter",
+            "name":"Profile pic",
+            "details":""
+        },
+        "next":{
+            "partialtext":"^Next.*$",
+            "action":"click",
+            "name":"next button",
+            "element_type":"button"
+        }
+    },
+    "section3":{
+        "id":"section-3",
+        "name":"section 3",
+        "paymentmode":{
+            "id":"paymenttype",
+            "action":"select",
+            "name":"Payment mode",
+            "details":""
+        },
+        "ccname":{
+            "id":"hname",
+            "action":"enter",
+            "name":"CC name",
+            "details":""
+        },
+        "ccnumber":{
+            "id":"cardnumber",
+            "action":"enter",
+            "name":"cc number",
+            "details":""
+        },
+        "cccvc":{
+            "id":"cvc",
+            "action":"enter",
+            "name":"CVV number",
+            "details":""
+        },
+        "ccexpiry":{
+            "id":"expirydate",
+            "action":"enter",
+            "name":"cc expiry",
+            "details":""
+        },
+        "aggre":{
+            "id":"aggre",
+            "name":"agreement radio",
+            "action":"click"
+        },
+        "next":{
+            "partialtext":"^Next.*$",
+            "action":"click",
+            "name":"next",
+            "element_type":"button"
+        }
+    },
+    "section4":{
+        "id":"section-4",
+        "name":"section 4",
+        "firstDigit":{
+            "id":"mathfirstnum",
+            "name":"captcha 1st number",
+            "action":"get"
+        },
+        "secondDigit":{
+            "id":"mathsecondnum",
+            "name":"catpcha 2nd number",
+            "action":"get"
+        },
+        "humanCheckCaptchaInput":{
+            "id":"humanCheckCaptchaInput",
+            "name":"capcha calculation",
+            "action":"enter",
+            "details":""
+        },
+        "Submit":{
+            "id":"Submit",
+            "name":"submit",
+            "action":"click"
+        }
+    }
+}

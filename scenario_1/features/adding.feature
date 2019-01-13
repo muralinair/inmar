@@ -7,3 +7,5 @@ Feature: Adding of two numbers
     | input1 | input2 | output |
     | 2      |   2    |   4    |
     | 98     |   1    |   98   |
+    | abc    |   def    |   98   |
+    | a12     |   c1    |   98   |

@@ -61,3 +61,61 @@ def getElementsReference(driver,xpath,elementName='')
         return false
     end
 end
+
+
+# getElementReference(): Used to get reference of element based on passed mode and element type.
+#   parameter: driver: Watir object
+#              identifier: Value for the unique identification of the reference on page
+#              [mode]: mode of verification.
+#              [element_type]: defined by what method should the reference be fetched.   
+#   returns: element reference
+def getElementReferenceWithGeneric(driver,identifier,name="",mode="id",element_type="element",wait_time=5)
+    begin
+        case mode
+            when "id"
+                if(Watir::Wait.until(timeout:wait_time){driver.send(element_type.to_sym,:id=>identifier).present?})
+                    return driver.send(element_type.to_sym,:id=>identifier)
+                else
+                    return false
+                end
+            when "partial"
+                if(Watir::Wait.until(timeout:wait_time){driver.send(element_type.to_sym,:visible_text=>/#{identifier}/).present?})
+                    return driver.send(element_type.to_sym,:visible_text=>/#{identifier}/)
+                else
+                    return false
+                end
+        end
+    rescue Exception => e
+        puts "Element #{name} was not found".red
+        return false
+    end
+end
+
+# performAction(): Used to perfomrm action on the element.
+#   parameter: elementRef: Element reference
+#              action: Value that signified what action needs to be performed
+#              [details]: Signifies whaich value needs to selected/send
+#   return: bool
+def performAction(elementRef,action,details="")
+    begin
+        case action
+            when "enter"
+                if(elementRef.attribute_value("readonly")=="true" or elementRef.attribute_value("disabled")=="true")              # Check to see if input value is disabled/readonly
+                    script="arguments[0].readOnly=false;arguments[0].disabled=false"
+                    elementRef.execute_script(script,elementRef)
+                end
+                elementRef.send_keys(details)
+
+            when "select"
+                elementRef.to_subtype.select(details)
+            when "click"
+                elementRef.click
+            when "get"
+                $section4sum=((elementRef.attribute_value("value").to_i))+$section4sum
+        end
+        return true
+    rescue Exception=>e
+        puts e.to_s.red
+        return false
+    end
+end
